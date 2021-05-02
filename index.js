@@ -21,7 +21,9 @@ app.use(errorHandler)
 const start  = async () => {
     try {
         await sequelize.authenticate()
-        await sequelize.sync()
+        await sequelize.sync({
+            force: false
+        })
         app.listen(PORT, () => {
             console.log(`Server started on port ${PORT}`)
         })
@@ -33,11 +35,3 @@ const start  = async () => {
 
 start();
 
-
-
-proxy_pass http://localhost:5000;
-    proxy_http_version 1.1;
-proxy_set_header Upgrade $http_upgrade;
-proxy_set_header Connection 'upgrade';
-proxy_set_header Host $host;
-proxy_cache_bypass $http_upgrade;

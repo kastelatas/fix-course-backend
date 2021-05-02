@@ -29,7 +29,8 @@ const Course_Category = sequelize.define('course_category', {
 
 const Subject = sequelize.define('subject', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    title: {type: DataTypes.STRING}
+    title: {type: DataTypes.STRING},
+    description: {type: DataTypes.STRING},
 })
 
 const Purchased_courses = sequelize.define('purchased_courses', {
