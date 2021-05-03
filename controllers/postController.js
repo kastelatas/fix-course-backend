@@ -14,7 +14,8 @@ class postController {
 
     async getAll(req, res) {
         const posts = await Post.findAndCountAll()
-        res.json({data: posts})
+        // res.json({data: posts})
+        res.json({message:'ALL RIGHT'})
     }
 
     async getOne(req, res, next) {

@@ -1,7 +1,7 @@
 const uuid = require('uuid')
 const path = require('path')
 const ApiError = require('../error/ApiError')
-const {Course, Subject, Lesson, Homework, Lesson_video} = require('../models/models')
+const {Subject, Lesson, Homework, Lesson_video} = require('../models/models')
 
 class lessonController {
     async create(req, res, next) {
